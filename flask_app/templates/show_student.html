@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            padding: 10px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 20px 0 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        th, td, td a {
+            color: #333;
+        }
+
+        td a button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        td a button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Details</h1>
+    <table border="3">
+        <tr>
+            <th>Student ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Course</th>
+        </tr>
+        {% for i in info %}
+        <tr>
+            <td>{{i.studentid}}</td>
+            <td>{{i.FirstName}}</td>
+            <td>{{i.LastName}}</td>
+            <td>{{i.course}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/dashboard2/{{session['college_id']}}"><button>Back To Dashboard</button></a>
+    <a href="/add_student/{{session['college_id']}}"><button>Add a new Student</button></a>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issued Books</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            padding: 10px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 10px 0 20px; 
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+
+        th, td {
+            border: none;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        th, td, td a {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Issued Books</h1>
+    <table border="3">
+        <tr>
+            <th>BOOK ID</th>
+            <th>Book Name</th>
+            <th>Author</th>
+            <th>ISBN</th>
+            <th>Genre</th>
+            <th>Publication Year</th>
+        </tr>
+        {% for i in info %}
+        <tr>
+            <td>{{i.bookid}}</td>
+            <td>{{i.title}}</td>
+            <td>{{i.Author}}</td>
+            <td>{{i.ISBN}}</td>
+            <td>{{i.Genre}}</td>
+            <td>{{i.publication_year}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/dashboard/{{session['college_id']}}"><button>Back To Dashboard</button></a>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a New Book</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        h3 {
+            text-align: left;
+            color: #333;
+            margin-bottom: 20px;
+            margin-left: 10px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 20px 0 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        button.home-button {
+            background-color: #333;
+            margin-top: 10px;
+        }
+
+        button.home-button:hover {
+            background-color: #555;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add a New Book</h1>
+    <form action="/add_book" method="POST">
+        <div>
+            <label for="bookid">Book ID:</label>
+            <input type="number" name="bookid" id="bookid">
+        </div><br>
+        <div>
+            <label for="title">Title:</label>
+            <input type="text" name="title" id="title">
+        </div><br>
+        <div>
+            <label for="author">Author:</label>
+            <input type="text" name="author" id="author">
+        </div><br>
+        <div>
+            <label for="isbn">ISBN:</label>
+            <input type="text" name="isbn" id="isbn">
+        </div><br>
+        <div>
+            <label for="genre">Genre:</label>
+            <input type="text" name="genre" id="genre">
+        </div><br>
+        <div>
+            <label for="publication_year">Publication Year:</label>
+            <input type="date" name="publication_year" id="publication_year">
+        </div><br>
+        <div>
+            <label for="quantity">Total Copies:</label>
+            <input type="number" name="quantity" id="quantity">
+        </div><br>
+        <div>
+        <button type="submit">SUBMIT</button>
+    </div>
+    </form>
+</body>
+</html>

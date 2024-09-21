@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit data</title>
+</head>
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        background-color: #eef5f5;
+    }
+    h1{
+        text-align: center;
+        color: #333;
+        margin-bottom: 10px;
+    }
+     form{
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #d1e6eb;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+    input[type=email],
+    input[type=text],
+    input[type=number],select {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border-radius: 4px;
+}
+.button{
+        width: 100px;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin-left: 150px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .button:hover {
+        background-color: #45a049;
+    }
+    .home-button {
+        text-align: right;
+        margin-right: 20px;
+        margin-top: 10px;
+    }
+</style>
+<body>
+    <h1>Edit : {{info.title}}</h1>
+    <form action="/update/{{info.bookid}}" method="POST">
+        
+        <div>
+            <label for="bookid">Book ID:</label>
+            <input type="number" name="bookid" id="bookid" value="{{info.bookid}}">
+        </div><br>
+        <div>
+            <label for="title">Title:</label>
+            <input type="text" name="title" id="title" value="{{info.title}}">
+        </div><br>
+        <div>
+            <label for="author">Author:</label>
+            <input type="text" name="author" id="author" value="{{info.author}}">
+        </div><br>
+        <div>
+            <label for="isbn">ISBN:</label>
+            <input type="text" name="isbn" id="isbn" value="{{info.ISBN}}">
+        </div><br>
+        <div>
+            <label for="genre">Genre:</label>
+            <input type="text" name="genre" id="genre" value="{{info.genre}}">
+        </div><br>
+        <div>
+            <label for="publication_year">Publication Year:</label>
+            <input type="date" name="publication_year" id="publication_year" value="{{info.publication_year}}">
+        </div><br>
+        <div>
+            <label for="quantity">Total Copies:</label>
+            <input type="number" name="quantity" id="quantity" value="{{info.quantity}}">
+        </div><br>
+        <div>
+            <button class="button"> UPDATE</button>
+        </div>
+    </form>
+</body>
+</html>

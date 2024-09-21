@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Index</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('{{url_for('static', filename='uu.jpg')}}') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .logo {
+            margin: 20px 0;
+        }
+
+        .header-box {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #333;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin: 0;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-box">
+            <h1>LIBRARY MANAGEMENT SYSTEM</h1>
+            <a href="/login" class="button" id="loginButton">Login</a>
+            <a href="/admin-login" class="button" id="adminLoginButton">Login as Admin</a>
+            <a href="/register" class="button" id="registrationButton">Registration</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginButton').addEventListener('click', function() {
+            window.location.href = 'login.html';
+        });
+       
+        document.getElementById('adminLoginButton').addEventListener('click', function() {
+            window.location.href = 'admin-login.html';
+        });
+
+        document.getElementById('registrationButton').addEventListener('click', function() {
+            window.location.href = 'registration.html';
+        });
+
+    </script>
+</body>
+</html>
